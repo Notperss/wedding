@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Work+Sans:wght@100;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Work+Sans:wght@100;300;400;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -39,7 +39,7 @@
         <h1>Baba & Bibi</h1>
         <p>Akan melangsunkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown" id="countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+        <a href="#home" class="btn btn-lg mt-4">Lihat Undangan</a>
       </main>
     </section>
 
@@ -127,6 +127,7 @@
           <div class="col-lg-6">
             <div class="row">
               <div class="col-4">
+                <!-- photo 500 x 500 -->
                 <img
                   src="img/pic2.jpeg"
                   alt="baba"
@@ -221,6 +222,47 @@
       </div>
     </section>
 
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Long long long story</span>
+            <h2>Long long way</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Obcaecati veritatis fuga illum ullam vel labore.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(img/pic1.jpg)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>First Meet</h3>
+                    <span>17 agustus 1945</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Ipsa atque modi adipisci corrupti velit impedit ipsum hic
+                      temporibus quibusdam illum!
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -239,6 +281,19 @@
           minutes: { singular: "Minute", plural: "Minutes" },
           seconds: { singular: "Second", plural: "Seconds" },
         },
+      });
+    </script>
+
+    <script>
+      const stickyTop = document.querySelector(".sticky-top");
+      const offcanvas = document.querySelector(".offcanvas");
+
+      offcanvas.addEventListener("show.bs.offcanvas", function () {
+        stickyTop.style.overflow = "visible";
+      });
+
+      offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "hidden";
       });
     </script>
   </body>
