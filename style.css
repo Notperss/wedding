@@ -5,6 +5,7 @@
   --bg-color: #fae8e0;
   --ebony: #cd9b80;
   --shadow: 0 2px 2px rgb(0 0 0/0.2);
+  --font: "rancho", cursive;
 }
 
 body {
@@ -28,30 +29,31 @@ body {
   z-index: -1; */
 /* filter: grayscale(); */
 /* }  */
-.hero::before {
+.hero .flower::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -80%;
   right: 0;
-  width: 600px; /* Lebar gambar latar belakang bunga di pojok kanan atas */
-  height: 1500px; /* Tinggi gambar latar belakang bunga di pojok kanan atas */
-  background: url("img/background-5535928_1280.png") no-repeat; /* URL gambar bunga di pojok */
-  background-size: auto; /* Sesuaikan dengan kebutuhan */
-  z-index: 0;
-  animation: float 3s ease-in-out infinite alternate;
-}
-#hero::after {
-  content: "";
-  position: absolute;
-  bottom: -30%;
-  left: -20%;
-  width: 900px; /* Lebar gambar di pojok bawah kiri */
+  width: 500px; /* Lebar gambar di pojok bawah kiri */
   height: 1000px; /* Tinggi gambar di pojok bawah kiri */
   background: url("img/floral.png") no-repeat; /* URL gambar di pojok bawah kiri */
   background-size: contain; /* Sesuaikan dengan kebutuhan */
   z-index: 0;
   animation: float 3s ease-in-out infinite alternate;
-  transform: rotate(50deg);
+  rotate: -180deg;
+}
+#hero .flower::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 600px; /* Lebar gambar di pojok bawah kiri */
+  height: 1000px; /* Tinggi gambar di pojok bawah kiri */
+  background: url("img/floral.png") no-repeat; /* URL gambar di pojok bawah kiri */
+  background-size: contain; /* Sesuaikan dengan kebutuhan */
+  z-index: 0;
+  animation: float 3s ease-in-out infinite alternate;
+  rotate: 80deg;
 }
 
 @keyframes slideInUp {
@@ -86,14 +88,12 @@ body {
   z-index: 1; /* Membuat konten di atas gambar latar belakang */
 }
 
-.hero h1,
-.hero h4,
-.hero p {
+.hero h1 {
   text-shadow: var(--shadow);
 }
 
 .hero h1 {
-  font-family: "Calligraffitti", cursive;
+  font-family: var(--font);
   font-size: 6rem;
   color: var(--ebony);
 }
@@ -132,7 +132,7 @@ body {
 
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
-  font-family: "Calligraffitti", cursive;
+  font-family: var(--font);
   font-size: 3.2rem;
   font-weight: bold;
 }
@@ -147,15 +147,38 @@ body {
   background-size: cover;
   min-height: 100vh;
   margin-top: -6rem;
-  padding-top: 15rem;
+  padding-top: 8rem;
   padding-bottom: 5rem;
+}
+
+.home .doa h1 {
+  font-family: var(--font);
+  font-size: 4.5rem;
+  color: var(--ebony);
+}
+
+.home .doa h3 {
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  color: var(--ebony);
+}
+.home .doa h4 {
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  color: var(--ebony);
+}
+.home .doa p {
+  font-size: 1.4rem;
+  color: var(--ebony);
+  margin-top: 2rem;
 }
 
 .home h2,
 .info h2,
-.story h2 {
+.story h2,
+.gifts h2 {
   color: var(--pink);
-  font-family: "Calligraffitti", cursive;
+  font-family: var(--font);
   font-size: 5rem;
   font-weight: bold;
 }
@@ -172,17 +195,27 @@ body {
 }
 
 .home .couple {
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .home .couple h3 {
-  font-family: "Calligraffitti", cursive;
+  font-family: var(--font);
   font-size: 2.4rem;
   color: var(--pink);
+}
+.home .couple .adhit {
+  padding-top: 3.5rem;
+}
+.home .couple .velia {
+  padding-top: 3.5rem;
 }
 
 .home .couple img {
   width: 100%;
+}
+
+.home .dan {
+  display: none;
 }
 
 .home .heart {
@@ -202,25 +235,32 @@ body {
   color: var(--pink);
 }
 
+.home h3.end-home {
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  color: var(--ebony);
+  margin-top: 5rem;
+}
+
 .info {
-  background-color: var(--bg);
-  color: #fff;
+  background-color: var(--bg-color);
+  color: #0a0a0a;
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
 .info .alamat {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .info .description {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 
 .info .card {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  color: white !important;
+  background-color: rgba(29, 28, 28, 0.2) !important;
+  /* color: white !important; */
   border: 1px solid #999;
 }
 
@@ -238,12 +278,14 @@ body {
   font-weight: 300;
 }
 
-.story {
+.story,
+.gifts {
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
-.story span {
+.story span,
+.gifts span {
   text-transform: uppercase;
   color: #666;
   font-size: 0.9rem;
@@ -252,7 +294,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.story p {
+.story p,
+.gifts p {
   font-size: 1rem;
   font-weight: 300;
 }
@@ -301,12 +344,56 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+footer {
+  padding: 3rem;
+  background-color: var(--ebony);
+  color: white;
+}
+
+footer a {
+  color: var(--bg-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.audio-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
 /* Media Query */
 
 /* Xtra Large */
 @media (max-width: 1200px) {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
+  }
+
+  .home .dan {
+    display: none;
   }
 }
 /* Laptop */
@@ -322,23 +409,30 @@ body {
   .home .heart {
     display: none;
   }
-  .hero::before {
+
+  .home .dan {
+    display: block;
+    color: var(--pink);
+    font-size: 3.5rem;
+    font-family: var(--font);
+  }
+  .hero .flower::before {
     content: "";
     position: absolute;
-    top: -35%;
-    right: -50%;
+    top: -80%;
+    right: 0;
     width: 500px; /* Lebar gambar di pojok bawah kiri */
     height: 1000px; /* Tinggi gambar di pojok bawah kiri */
     background: url("img/floral.png") no-repeat; /* URL gambar di pojok bawah kiri */
     background-size: contain; /* Sesuaikan dengan kebutuhan */
     z-index: 0;
     animation: float 3s ease-in-out infinite alternate;
-    rotate: -80deg;
+    rotate: -180deg;
   }
-  #hero::after {
+  #hero .flower::after {
     content: "";
     position: absolute;
-    bottom: -45%;
+    bottom: -30%;
     left: -50%;
     width: 600px; /* Lebar gambar di pojok bawah kiri */
     height: 1000px; /* Tinggi gambar di pojok bawah kiri */
@@ -369,7 +463,7 @@ body {
     overflow: hidden;
   }
 
-  .hero::before {
+  .hero .flower::before {
     content: "";
     position: absolute;
     top: -20%; /* Sesuaikan dengan kebutuhan, misalnya 10% agar tidak terlalu tinggi di luar layar */
@@ -382,7 +476,7 @@ body {
     animation: float 3s ease-in-out infinite alternate;
     rotate: 180deg;
   }
-  #hero::after {
+  #hero .flower::after {
     content: "";
     position: absolute;
     bottom: -10%;
@@ -403,25 +497,25 @@ body {
   html {
     font-size: 60%;
   }
-  .hero::before {
+  .hero .flower::before {
     content: "";
     position: absolute;
-    top: -20%; /* Sesuaikan dengan kebutuhan, misalnya 10% agar tidak terlalu tinggi di luar layar */
+    top: -15%; /* Sesuaikan dengan kebutuhan, misalnya 10% agar tidak terlalu tinggi di luar layar */
     left: 17%; /* Sesuaikan dengan kebutuhan, misalnya 10% agar tidak terlalu jauh ke kiri di luar layar */
-    width: 400px; /* Lebar gambar di pojok bawah kiri */
-    height: 400px; /* Tinggi gambar di pojok bawah kiri */
+    width: 300px; /* Lebar gambar di pojok bawah kiri */
+    height: 300px; /* Tinggi gambar di pojok bawah kiri */
     background: url("img/floral.png") no-repeat; /* URL gambar di pojok bawah kiri */
     background-size: contain; /* Sesuaikan dengan kebutuhan */
     z-index: 0;
     animation: float 3s ease-in-out infinite alternate;
     rotate: 180deg;
   }
-  #hero::after {
+  #hero .flower::after {
     content: "";
     position: absolute;
-    bottom: -15%;
-    width: 500px; /* Lebar gambar di pojok bawah kiri */
-    height: 500px; /* Tinggi gambar di pojok bawah kiri */
+    bottom: -6%;
+    width: 400px; /* Lebar gambar di pojok bawah kiri */
+    height: 400px; /* Tinggi gambar di pojok bawah kiri */
     background: url("img/floral.png") no-repeat; /* URL gambar di pojok bawah kiri */
     background-size: contain; /* Sesuaikan dengan kebutuhan */
     z-index: 0;
